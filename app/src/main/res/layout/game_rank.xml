@@ -15,38 +15,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
-    <TextView
-        android:id="@+id/info_0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="※ 랭킹 1위의 메세지 ※"
-        android:textColor="#ff0000"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/logo_rank"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <Button
-        android:id="@+id/btn_edit_save"
-        android:layout_width="35dp"
-        android:layout_height="0dp"
-        android:text="편집"
-        android:layout_marginLeft="20dp"
-        app:layout_constraintLeft_toRightOf="@id/info_0"
-        app:layout_constraintTop_toTopOf="@id/info_0"
-        app:layout_constraintBottom_toBottomOf="@id/info_0"/>
-
-    <EditText
-        android:id="@+id/edt_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FF9800"
-        android:enabled="false"
-        android:singleLine="true"
-        app:layout_constraintTop_toBottomOf="@id/info_0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
     <ListView
         android:id="@+id/lv_rank"
         android:layout_width="0dp"
@@ -55,7 +23,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="140dp"
-        app:layout_constraintTop_toBottomOf="@id/edt_message"
+        app:layout_constraintTop_toBottomOf="@id/logo_rank"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
