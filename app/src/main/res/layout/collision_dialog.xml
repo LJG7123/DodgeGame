@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ddd"
-            android:textColor="#ffff00"
+            android:textColor="#ff0000"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="@id/info_1"
             app:layout_constraintLeft_toRightOf="@id/info_1" />
