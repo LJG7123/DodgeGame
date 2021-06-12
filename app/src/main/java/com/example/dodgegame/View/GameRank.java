@@ -128,8 +128,6 @@ public class GameRank extends Fragment {
             @Override
             public void onClick(View v) {
                 mainActivity.onFragmentChange("메뉴화면");
-                /*mediaPlayer = MediaPlayer.create(getContext(), R.raw.cancel);
-                mediaPlayer.start();*/
             }
         });
     }
