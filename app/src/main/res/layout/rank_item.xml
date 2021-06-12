@@ -14,7 +14,8 @@
         android:layout_weight="1"
         android:text="순위"
         android:textAlignment="center"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/rank_initials"
@@ -24,7 +25,8 @@
         android:layout_weight="1"
         android:text="이니셜"
         android:textAlignment="center"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/rank_score"
@@ -34,6 +36,7 @@
         android:layout_weight="1"
         android:text="점수"
         android:textAlignment="center"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:textColor="@color/white"/>
 
 </LinearLayout>

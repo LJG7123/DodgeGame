@@ -7,9 +7,10 @@
     <TextView
         android:id="@+id/logo_rank"
         android:layout_width="100dp"
-        android:layout_height="60dp"
+        android:layout_height="70dp"
         android:text="랭킹"
         android:textSize="54sp"
+        android:textColor="@color/white"
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

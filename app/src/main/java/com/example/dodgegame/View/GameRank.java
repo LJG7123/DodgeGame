@@ -77,8 +77,6 @@ public class GameRank extends Fragment {
 
         btn_returnMenu = rootView.findViewById(R.id.btn_returnMenu);
         lv_rank = rootView.findViewById(R.id.lv_rank);
-        btn_edit_save = rootView.findViewById(R.id.btn_edit_save);
-        edt_message = rootView.findViewById(R.id.edt_message);
 
         try {
             // Personnel 테이블에서 인물정보 추출
@@ -132,40 +130,6 @@ public class GameRank extends Fragment {
                 mainActivity.onFragmentChange("메뉴화면");
                 /*mediaPlayer = MediaPlayer.create(getContext(), R.raw.cancel);
                 mediaPlayer.start();*/
-            }
-        });
-
-        btn_edit_save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*mediaPlayer = MediaPlayer.create(getContext(), R.raw.ok);
-                mediaPlayer.start();*/
-
-                if (btnStatus == "edit") {
-                    if (myDeviceId.equals(deviceId_1st)) {
-                        edt_message.setEnabled(true);
-                        btn_edit_save.setText("저장");
-                        btnStatus = "save";
-                    } else {
-                        AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
-                        dialog.setTitle("랭킹 1위의 특권")
-                                .setMessage("랭킹 1위만 편집이 가능합니다.")
-                                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        dialogInterface.dismiss();
-                                    }
-                                }).show();
-                    }
-                } else if (btnStatus == "save") {
-                    Map<String, Object> map = new HashMap<>();
-                    map.put("message", edt_message.getText().toString());
-                    //db.collection("Message").document("Rank_1st").set(map);
-                    edt_message.setEnabled(false);
-                    Toast.makeText(getContext(), "메세지가 저장되었습니다.", Toast.LENGTH_SHORT).show();
-                    btn_edit_save.setText("편집");
-                    btnStatus = "edit";
-                }
             }
         });
     }
