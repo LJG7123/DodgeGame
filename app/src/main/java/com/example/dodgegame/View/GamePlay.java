@@ -321,7 +321,10 @@ public class GamePlay extends Fragment {
                     if (score > lowest_score) {
                         showCollisionDialog_rank();
                     } else {
-                        Toast.makeText(getContext(), "이런! 점수가 너무 낮아서 랭킹 등록을 할 수 없습니다. 랭킹 등록에 필요한 최소 점수는 " + (score_10th + 1) + "점입니다.", Toast.LENGTH_LONG).show();
+                        if(i>=10)
+                            Toast.makeText(getContext(), "이런! 점수가 너무 낮아서 랭킹 등록을 할 수 없습니다. 랭킹 등록에 필요한 최소 점수는 " + (lowest_score + 1) + "점입니다.", Toast.LENGTH_LONG).show();
+                        else
+                            showCollisionDialog_rank();
                     }
                 }
                 else { Toast.makeText(mainActivity, "이미 랭킹등록을 하셨습니다.", Toast.LENGTH_SHORT).show(); }
