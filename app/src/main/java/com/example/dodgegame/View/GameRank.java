@@ -1,21 +1,17 @@
 package com.example.dodgegame.View;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,12 +21,9 @@ import com.example.dodgegame.DBManager;
 import com.example.dodgegame.ListView.ListViewAdapter;
 import com.example.dodgegame.ListView.RankData;
 import com.example.dodgegame.MainActivity;
-import com.example.dodgegame.NetworkStatus;
 import com.example.dodgegame.R;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class GameRank extends Fragment {
     String myDeviceId;

@@ -57,10 +57,10 @@ public class ListViewAdapter extends BaseAdapter {
 
         if(i == 0) {
             rankNumber.setText("순위");
-            rankNumber.setTextColor(Color.WHITE);
-            initials.setTextColor(Color.WHITE);
+            rankNumber.setTextColor(Color.YELLOW);
+            initials.setTextColor(Color.YELLOW);
             score.setText("점수");
-            score.setTextColor(Color.WHITE);
+            score.setTextColor(Color.YELLOW);
         }
 
         /*if(rankdata.getDeviceId().equals(myDeviceId)) {

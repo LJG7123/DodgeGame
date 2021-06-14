@@ -11,7 +11,6 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Rect;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -33,7 +32,6 @@ import android.widget.Toast;
 import com.example.dodgegame.Bullet;
 import com.example.dodgegame.DBManager;
 import com.example.dodgegame.MainActivity;
-import com.example.dodgegame.NetworkStatus;
 import com.example.dodgegame.R;
 import com.example.dodgegame.RepeatListener;
 /*import com.google.android.gms.tasks.OnCompleteListener;
@@ -65,14 +63,11 @@ public class GamePlay extends Fragment {
     static ConstraintLayout gameLayout, rightWall;
     static LinearLayout bottomWall;
 
-    MediaPlayer mediaPlayer;
-
     AlertDialog ad1,ad2;
     NumberPicker npName1,npName2, npName3;
     String initials;
     boolean registerRank = false;
     ProgressDialog mProgressDialog;
-    //FirebaseFirestore db;
     long score_10th;
 
     DBManager dbmanager;
@@ -111,7 +106,6 @@ public class GamePlay extends Fragment {
         btn_left.setOnTouchListener(new RepeatListener(0, 0, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                craft.setImageResource(R.drawable.craft_left);
                 if (craft.getX() > 0) {
                     craft.setX(craft.getX() - 5);
                 }
@@ -120,7 +114,6 @@ public class GamePlay extends Fragment {
         btn_up.setOnTouchListener(new RepeatListener(0, 0, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                craft.setImageResource(R.drawable.craft);
                 if (craft.getY() > 0) {
                     craft.setY(craft.getY() - 5);
                 }
@@ -129,7 +122,6 @@ public class GamePlay extends Fragment {
         btn_down.setOnTouchListener(new RepeatListener(0, 0, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                craft.setImageResource(R.drawable.craft);
                 if (craft.getY() + craft.getHeight() < bottomWall.getY()) {
                     craft.setY(craft.getY() + 5);
                 }
@@ -138,26 +130,15 @@ public class GamePlay extends Fragment {
         btn_right.setOnTouchListener(new RepeatListener(0, 0, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                craft.setImageResource(R.drawable.craft_right);
                 if (craft.getX() + craft.getWidth() < rightWall.getX()) {
                     craft.setX(craft.getX() + 5);
                 }
             }
         }));
 
-        /** post()를 통해 레이아웃이 생성된 후에 수행됨. */
         rootView.post(new Runnable() {
             @Override
             public void run() {
-                /*if (new Random().nextInt(2) == 0) {
-                    mediaPlayer = MediaPlayer.create(mainActivity , R.raw.background_1);
-                }
-                else {
-                    mediaPlayer = MediaPlayer.create(mainActivity , R.raw.background_2);
-                }
-                mediaPlayer.start();
-                mediaPlayer.setLooping(true);*/
-
                 // 총알 생성
                 createBullets("일반", 10);
 
@@ -193,9 +174,6 @@ public class GamePlay extends Fragment {
                                     btn_left.setEnabled(false);
                                     btn_right.setEnabled(false);
 
-                                    /*mediaPlayer.stop();
-                                    mediaPlayer = MediaPlayer.create(getContext(), R.raw.collision);
-                                    mediaPlayer.start();*/
                                     showCollisionDialog();
                                     break;
                                 }
@@ -282,8 +260,6 @@ public class GamePlay extends Fragment {
         btn_retry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*mediaPlayer = MediaPlayer.create(getContext() , R.raw.ok);
-                mediaPlayer.start();*/
 
                 ad1.dismiss();
                 mainActivity.onFragmentChange("게임화면");
@@ -293,8 +269,6 @@ public class GamePlay extends Fragment {
         btn_rank_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*mediaPlayer = MediaPlayer.create(getContext() , R.raw.ok);
-                mediaPlayer.start();*/
 
                 if(registerRank == false) {
                     mProgressDialog = ProgressDialog.show(getContext(), "",
@@ -334,8 +308,7 @@ public class GamePlay extends Fragment {
         btn_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*mediaPlayer = MediaPlayer.create(getContext() , R.raw.cancel);
-                mediaPlayer.start();*/
+
                 ad1.dismiss();
                 mainActivity.onFragmentChange("메뉴화면");
             }
@@ -373,8 +346,6 @@ public class GamePlay extends Fragment {
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*mediaPlayer = MediaPlayer.create(getContext() , R.raw.ok);
-                mediaPlayer.start();*/
 
                 initials = String.valueOf((char)(npName1.getValue() + 65)) +
                         (char)(npName2.getValue() + 65) +
@@ -409,8 +380,6 @@ public class GamePlay extends Fragment {
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*mediaPlayer = MediaPlayer.create(getContext() , R.raw.cancel);
-                mediaPlayer.start();*/
 
                 ad2.dismiss();
             }
