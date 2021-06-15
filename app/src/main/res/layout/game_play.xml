@@ -28,7 +28,7 @@
         android:id="@+id/craft"
         android:layout_width="30dp"
         android:layout_height="40dp"
-        android:src="@drawable/craft"
+        android:src="@drawable/craft2"
         android:scaleType="fitXY"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

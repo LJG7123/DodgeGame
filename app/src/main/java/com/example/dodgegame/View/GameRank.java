@@ -27,9 +27,7 @@ import java.util.ArrayList;
 
 public class GameRank extends Fragment {
     String myDeviceId;
-    MediaPlayer mediaPlayer;
 
-    //FirebaseFirestore db;
     ArrayList<RankData> dataList = new ArrayList();
 
     String deviceId, initials;
@@ -41,9 +39,6 @@ public class GameRank extends Fragment {
 
     ProgressDialog mProgressDialog;
 
-    Button btn_edit_save;
-    String btnStatus = "edit";
-    EditText edt_message;
     String deviceId_1st = "초기값";
 
     DBManager dbmanager;
